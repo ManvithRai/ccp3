@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.1/dist/quartz/bootstrap.min.css"/>
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Character encoding scheme -->
+		<meta charset="UTF-8"> 
+		<title>WEB-APP</title>
+	</head>
+	
+</head>
+<body>
+	<div style="margin-right: 20%; margin-left: 20%;">
+
+	{%if msg != ''%}
+		<h3>{{msg}}</h3>
+	{%else%}
+	<p style="text-align: center;font-size: 3rem;"><b>Public Key Files</b></p>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th scope="col" style="font-size: 1.5rem;"><p style="margin-left: 20%;">Public Key</p></th>
+					
+					<th style="font-size: 1.5rem; ;"><p style="margin-left: 20%;">Uploader</p></th>
+				</tr>
+			</thead>
+			<tbody>
+					{%for itr in range(length):%}
+					<tr class="table-secondary">
+						<td scope="col"><a href="retrieve/key/{{directory[itr]}}"><p style="color: rgb(5, 2, 1);font-weight: bold;font-size: 1.25rem;">Click here to download public key</p></a></td>
+						
+						<td><p style="color: rgb(5, 2, 1);font-weight: bold;font-size: 1.25rem;">{{directory[itr]}}</p></td>
+					</tr>
+					{%endfor%}
+			</tbody>
+		</table>
+	{%endif%}
+	</div>
+</body>
+</html>
